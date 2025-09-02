@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- Indique au navigateur qu'on utilise le HTML5 moderne -->
+<html lang="fr">
+  <!-- "lang=fr" aide l'accessibilité (lecteurs d'écran) et le SEO -->
+  <head>
+    <meta charset="utf-8" />
+    <!-- Affichage responsive : largeur = largeur de l'écran, zoom initial 1 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TalentJump — Gérez vos candidatures, sans friction</title>
+
+    <!-- Import de la police Inter depuis Google Fonts (graisses 400/600/700/800) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lien vers ta feuille de style externe.
+         Arborescence attendue :
+         /index.html
+         /css/style.css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ===================== HEADER ===================== -->
+    <!-- <header> = zone d'en-tête du site (logo + navigation principale) -->
+    <!-- HEADER UNIFIÉ -->
+    <header class="site-header">
+      <div class="header__inner">
+        <a class="brand" href="index.html" aria-label="TalentJump — Accueil"
+          >TalentJump</a
+        >
+
+        <nav aria-label="Navigation principale">
+          <ul class="nav__links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="candidats.html">Candidats</a></li>
+            <li><a href="ajouter.html">Ajouter un candidat</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ====================== HERO ====================== -->
+    <!-- <section> = bloc thématique. Ici : pitch + appels à l'action (CTA). -->
+    <section class="hero">
+      <!-- Grille 2 colonnes sur desktop, 1 colonne sur mobile (géré en CSS) -->
+      <div class="container hero__grid">
+        <!-- Colonne gauche : textes -->
+        <div>
+          <!-- Titre principal. <br> force le retour à la ligne comme sur la maquette -->
+          <h1>Gérez vos candidatures,<br />sans friction</h1>
+
+          <!-- Sous-titre en gris plus clair -->
+          <p class="hero__subtitle">
+            Un outil simple pour suivre et organiser l’ensemble du processus de
+            recrutement.
+          </p>
+
+          <!-- Deux CTAs : "Voir les candidats" (primaire) et "Ajouter un candidat" (secondaire) -->
+          <div class="hero__actions">
+            <a class="btn btn--onblue" href="candidats.html"
+              >Voir les candidats</a
+            >
+            <a class="btn btn--outline-onblue" href="ajouter.html"
+              >Ajouter un candidat</a
+            >
+          </div>
+        </div>
+
+        <!-- Colonne droite : visuel de démonstration (simple placeholder) -->
+        <!-- aria-hidden="true" = décoratif, ignoré par les lecteurs d'écran -->
+        <div class="mockup" aria-hidden="true">
+          <div class="mockup__window">
+            <div class="mockup__bar"></div>
+            <div class="mockup__content">
+              <!-- Blocs gris qui simulent une capture d'écran d'application -->
+              <div class="mockup__block mockup__block--hero"></div>
+              <div class="mockup__block mockup__block--line"></div>
+              <div class="mockup__block mockup__block--line short"></div>
+              <div class="mockup__cta"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== FEATURES / CARTES =============== -->
+    <!-- id="features" permet au lien #features du header de scroller ici -->
+    <section id="features" class="features">
+      <div class="container">
+        <!-- Grille responsive d'articles/carte (CSS: .grid-cards) -->
+        <div class="grid-cards">
+          <!-- --------- Carte 1 --------- -->
+          <!-- <article> : contenu autonome (titre, texte). Accessibilité améliorée. -->
+          <article class="card">
+            <!-- Emoji utilisé comme icône. aria-hidden car décoratif -->
+            <div class="card__icon" aria-hidden="true"><p>➕👤</p></div>
+            <h3 class="card__title">Ajouter un candidat</h3>
+            <p>
+              Ajoutez de nouveaux candidats à votre pipeline en quelques clics.
+            </p>
+          </article>
+
+          <!-- --------- Carte 2 --------- -->
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">📋</div>
+            <h3 class="card__title">Visualiser tous les candidats</h3>
+            <p>
+              Affichez une liste complète des candidats avec leurs informations
+              clés.
+            </p>
+          </article>
+
+          <!-- --------- Carte 3 --------- -->
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">⚙️</div>
+            <h3 class="card__title">Modifier le statut</h3>
+            <p>Mettez à jour les statuts pour suivre l’avancement.</p>
+
+            <!-- Petites "pastilles" (chips) pour illustrer les statuts possibles -->
+            <div class="chips" aria-label="Exemples de statuts">
+              <!-- Les classes chip--pending / --interview / --rejected gèrent les couleurs -->
+              <span class="chip chip--pending">En attente</span>
+              <span class="chip chip--interview">Entretien</span>
+              <span class="chip chip--rejected">Refusé</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Espace visuel en bas pour "respirer". 
+         Dans un vrai site, remplace par un <footer> avec mentions légales, liens, etc. -->
+    <div class="footer-space" aria-hidden="true"></div>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!-- =========================================================================
+     FICHIER : candidats.html
+     OBJET   : Page "Candidats" (liste de cartes)
+     STYLE   : Voir css/style.css (header commun + section Candidats)
+     NOTE    : HTML statique (pas de JavaScript). Visuel identique au prototype.
+     ======================================================================== -->
+
+<html lang="fr">
+  <!-- Définit la langue du document (accessibilité + SEO) -->
+  <head>
+    <!-- ===================== MÉTA-DONNÉES & HEAD ===================== -->
+    <meta charset="UTF-8" />
+    <!-- Encodage UTF-8 : caractères accentués OK -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Viewport responsive : largeur du viewport = largeur de l’écran -->
+
+    <title>TalentJump - Candidats</title>
+    <!-- Titre de l’onglet navigateur -->
+
+    <!-- Police Inter (charte typographique du projet) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lien vers la feuille de style UNIQUE et partagée -->
+    <!-- ⚠️ Si le style "disparaît", vérifier que le chemin "css/style.css" est correct
+         et que le fichier contient bien la section CANDIDATS. -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================================
+         HEADER UNIFIÉ
+         - Structure commune à TOUTES les pages (index, candidats, ajouter)
+         - Garantit le logo à la même position (voir .site-header & .header__inner)
+         - La classe .active sur un lien indique la page courante (visuel contrôlé en CSS)
+         ====================================================================== -->
+    <header class="site-header">
+      <div class="header__inner">
+        <!-- LOGO / MARQUE
+             - Texte stylé (peut être remplacé par <img> si on a un logo SVG)
+             - aria-label pour l’accessibilité (lecteurs d’écran) -->
+        <a class="brand" href="index.html" aria-label="TalentJump — Accueil"
+          >TalentJump</a
+        >
+
+        <!-- NAVIGATION PRINCIPALE -->
+        <nav aria-label="Navigation principale">
+          <ul class="nav__links">
+            <!-- RÈGLE : mettre la classe .active sur le lien de la page en cours -->
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="candidats.html" class="active">Candidats</a></li>
+            <li><a href="ajouter.html">Ajouter un candidat</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- =====================================================================
+         FILTRES (VISUELS UNIQUEMENT)
+         - Champ texte + 3 selects
+         - Aucun JS : ils sont purement décoratifs pour la maquette
+         - Connectables plus tard à une logique (Java/console -> HTML généré)
+         ====================================================================== -->
+    <div class="filters">
+      <!-- Placeholder explicite + aria-label = bonne accessibilité -->
+      <input
+        type="text"
+        placeholder="Rechercher un candidat..."
+        aria-label="Rechercher un candidat"
+      />
+
+      <!-- Les <option> sont des libellés d’exemple -->
+      <select aria-label="Filtrer par statut">
+        <option>Statut</option>
+      </select>
+
+      <select aria-label="Filtrer par poste">
+        <option>Poste</option>
+      </select>
+
+      <select aria-label="Trier par">
+        <option>Trier par</option>
+      </select>
+    </div>
+
+    <main>
+      <!-- ===================================================================
+           LISTE DES CARTES CANDIDATS
+           - Grille responsive (voir .candidates en CSS)
+           - Chaque candidat = <article class="candidate-card">
+           - STRUCTURE D’UNE CARTE :
+             .candidate-header   → avatar + infos (nom, email, poste) + statut
+             .skills             → liste de tags compétences
+             .actions            → boutons visuels (Modifier / Supprimer)
+           - STATUTS : .en-attente / .refuse / .accepte (couleurs en CSS)
+           ==================================================================== -->
+      <div class="candidates">
+        <!-- =================== CARTE #1 — Jenny Wilson =================== -->
+        <article class="candidate-card">
+          <div class="candidate-header">
+            <!-- PHOTO DE PROFIL
+                 - Taille contrôlée par CSS (50x50, cercle)
+                 - alt descriptif = bon pour l’accessibilité -->
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="Jenny Wilson"
+            />
+
+            <!-- BLOC INFOS : Nom, email, poste -->
+            <div>
+              <h3>Jenny Wilson</h3>
+              <p>jenny.wilson@example.com</p>
+              <p>Développeur Java</p>
+            </div>
+
+            <!-- STATUT : choisir l’une des classes suivantes :
+                 .en-attente | .refuse | .accepte (couleur gérée en CSS) -->
+            <span class="status en-attente">En attente</span>
+          </div>
+
+          <!-- COMPÉTENCES (tags) -->
+          <div class="skills">
+            <span>Java</span><span>Spring</span><span>SQL</span>
+          </div>
+
+          <!-- ACTIONS (visuel uniquement)
+               - Curseur pointeur au survol (CSS)
+               - Pas de logique JS (maquette) -->
+          <div class="actions">
+            <button type="button">Modifier statut</button>
+            <button type="button" class="danger">Supprimer</button>
+          </div>
+        </article>
+
+        <!-- =================== CARTE #2 — Guy Hawkins ==================== -->
+        <article class="candidate-card">
+          <div class="candidate-header">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Guy Hawkins"
+            />
+            <div>
+              <h3>Guy Hawkins</h3>
+              <p>guy.hawkins@example.com</p>
+              <p>UI/UX Designer</p>
+            </div>
+            <span class="status en-attente">En attente</span>
+          </div>
+
+          <div class="skills"><span>Figma</span><span>Sketch</span></div>
+
+          <div class="actions">
+            <button type="button">Modifier statut</button>
+            <button type="button" class="danger">Supprimer</button>
+          </div>
+        </article>
+
+        <!-- ================= CARTE #3 — Kathryn Murphy =================== -->
+        <article class="candidate-card">
+          <div class="candidate-header">
+            <img
+              src="https://randomuser.me/api/portraits/women/47.jpg"
+              alt="Kathryn Murphy"
+            />
+            <div>
+              <h3>Kathryn Murphy</h3>
+              <p>kathryn.murphy@example.com</p>
+              <p>Développeur Full Stack</p>
+            </div>
+            <span class="status refuse">Refusé</span>
+          </div>
+
+          <div class="skills">
+            <span>React</span><span>Node.js</span><span>TypeScript</span>
+          </div>
+
+          <div class="actions">
+            <button type="button">Modifier statut</button>
+            <button type="button" class="danger">Supprimer</button>
+          </div>
+        </article>
+
+        <!-- ==================== CARTE #4 — Jerome Bell ==================== -->
+        <article class="candidate-card">
+          <div class="candidate-header">
+            <img
+              src="https://randomuser.me/api/portraits/men/50.jpg"
+              alt="Jerome Bell"
+            />
+            <div>
+              <h3>Jerome Bell</h3>
+              <p>jerome.bell@example.com</p>
+              <p>Ingénieur Logiciel</p>
+            </div>
+            <span class="status accepte">Accepté</span>
+          </div>
+
+          <div class="skills">
+            <span>Python</span><span>AWS</span><span>Docker</span>
+          </div>
+
+          <div class="actions">
+            <button type="button">Modifier statut</button>
+            <button type="button" class="danger">Supprimer</button>
+          </div>
+        </article>
+
+        <!-- ===================== MODÈLE À DUPLIQUER =======================
+             Pour ajouter rapidement un nouveau candidat en live :
+             1) Copier-coller le bloc <article class="candidate-card">…</article>
+             2) Remplacer l’URL de l’image + alt + Nom/Email/Poste
+             3) Choisir la classe de statut (.en-attente | .refuse | .accepte)
+             4) Remplir les <span> des compétences
+        <article class="candidate-card">
+          <div class="candidate-header">
+            <img src="URL_IMAGE" alt="Nom Prénom" />
+            <div>
+              <h3>Nom Prénom</h3>
+              <p>email@exemple.com</p>
+              <p>Poste ciblé</p>
+            </div>
+            <span class="status en-attente">En attente</span>
+          </div>
+          <div class="skills">
+            <span>Compétence 1</span><span>Compétence 2</span>
+          </div>
+          <div class="actions">
+            <button type="button">Modifier statut</button>
+            <button type="button" class="danger">Supprimer</button>
+          </div>
+        </article>
+        ================================================================== -->
+      </div>
+    </main>
+
+    <!-- =====================================================================
+         PIED DE PAGE (commun)
+         - Simple, centré. Le style vient du CSS commun (voir footer{}).
+         ====================================================================== -->
+    <footer>© 2025 TalentJump</footer>
+  </body>
+</html>
