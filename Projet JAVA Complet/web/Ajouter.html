@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalentJump - Ajouter un candidat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header__inner">
+      <a class="brand" href="index.html">TalentJump</a>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="index.html">Accueil</a></li>
+          <!-- lien corrigé vers la route dynamique -->
+          <li><a href="/candidats">Candidats</a></li>
+          <li><a href="ajouter.html" class="active">Ajouter un candidat</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <h2>Ajouter un candidat</h2>
+      <form action="/ajouter" method="post">
+        <label for="lastname">Nom</label>
+        <input type="text" id="lastname" name="lastname" required />
+
+        <label for="firstname">Prénom</label>
+        <input type="text" id="firstname" name="firstname" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="targetPosition">Poste visé</label>
+        <input type="text" id="targetPosition" name="targetPosition" required />
+
+        <label for="skills">Compétences (séparées par des virgules)</label>
+        <textarea id="skills" name="skills" placeholder="Exemple : Java, Spring, SQL" required></textarea>
+
+        <label for="cvLink">Lien vers le CV</label>
+        <input type="url" id="cvLink" name="cvLink" required />
+
+        <button type="submit">Ajouter</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>© 2025 TalentJump</footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TalentJump — Gérez vos candidatures, sans friction</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header">
+      <div class="header__inner">
+        <a class="brand" href="index.html" aria-label="TalentJump — Accueil">
+          TalentJump
+        </a>
+
+        <nav aria-label="Navigation principale">
+          <ul class="nav__links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="/candidats">Candidats</a></li>
+            <li><a href="ajouter.html">Ajouter un candidat</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ====================== HERO ====================== -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <h1>Gérez vos candidatures,<br />sans friction</h1>
+          <p class="hero__subtitle">
+            Un outil simple pour suivre et organiser l’ensemble du processus de
+            recrutement.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--onblue" href="/candidats">Voir les candidats</a>
+            <a class="btn btn--outline-onblue" href="ajouter.html">
+              Ajouter un candidat
+            </a>
+          </div>
+        </div>
+
+        <div class="mockup" aria-hidden="true">
+          <div class="mockup__window">
+            <div class="mockup__bar"></div>
+            <div class="mockup__content">
+              <div class="mockup__block mockup__block--hero"></div>
+              <div class="mockup__block mockup__block--line"></div>
+              <div class="mockup__block mockup__block--line short"></div>
+              <div class="mockup__cta"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== FEATURES / CARTES =============== -->
+    <section id="features" class="features">
+      <div class="container">
+        <div class="grid-cards">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><p>➕👤</p></div>
+            <h3 class="card__title">Ajouter un candidat</h3>
+            <p>
+              Ajoutez de nouveaux candidats à votre pipeline en quelques clics.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">📋</div>
+            <h3 class="card__title">Visualiser tous les candidats</h3>
+            <p>
+              Affichez une liste complète des candidats avec leurs informations
+              clés.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">⚙️</div>
+            <h3 class="card__title">Modifier le statut</h3>
+            <p>Mettez à jour les statuts pour suivre l’avancement.</p>
+            <div class="chips" aria-label="Exemples de statuts">
+              <span class="chip chip--pending">En attente</span>
+              <span class="chip chip--interview">Entretien</span>
+              <span class="chip chip--rejected">Refusé</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-space" aria-hidden="true"></div>
+  </body>
+</html>
