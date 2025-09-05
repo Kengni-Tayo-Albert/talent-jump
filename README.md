@@ -58,12 +58,13 @@ Le front peut être ouvert directement dans un navigateur ou servi par le serveu
 
 ### Lancer le projet  
 1. ouvrir le dossier sur visual studio code
-   ```  
+
 2. apres avoir installer java et le jdk ce rendre sur le fichier "serveur.java"
 puis lancer le serveur via la function run java  
-   ```  
-3. Le serveur (`Serveur.java`) démarre et rend accessible les pages HTML situées dans le dossier `web/`.  
-4. Ouvrir un navigateur et accéder à :  
+
+3. Le serveur (`Serveur.java`) démarre et rend accessible les pages HTML situées dans le dossier `web/`.
+   
+5. Ouvrir un navigateur et accéder à :  
    ```
    http://localhost:1234
    ```  
@@ -84,3 +85,4 @@ puis lancer le serveur via la function run java
 - Développement : Albert (lead), Dorian, Josué  
 - UI/Front-end : HTML5 + CSS
 - Back-end : Java (serveur)  
+
