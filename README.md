@@ -1,201 +1,86 @@
-﻿# talent-jump
+# TalentJump
 
-TalentJump — Front-End
-
-Mini-site interne de gestion des candidatures (projet B3 Tech) — sans framework CSS/JS, HTML5 + CSS3 uniquement.
+Mini-site de gestion interne des candidatures — Projet Java (B3).  
 Équipe : Albert (lead), Dorian, Josué.
 
-Table des matières
-
-Aperçu
-
-Périmètre Front-End
-
-Structure du projet
-
-Démarrage rapide
-
-Design System
-
-Pages & Composants
-
-Accessibilité & Responsive
-
-Bonnes pratiques & Maintenance
-
-Conformité aux consignes
-
-Crédits
-
-Aperçu
-
-Interface statique visant à présenter l’outil TalentJump et à maquetter (sans logique) :
-
-une page d’accueil,
-
-une liste de candidats sous forme de cartes,
-
-un formulaire d’ajout de candidat.
-
-La logique de traitement (Java/console + génération HTML) est hors périmètre du front-end et sera branchée ensuite.
-
-Périmètre Front-End
-
-Technologies : HTML5, CSS3 (fichier unique css/style.css).
-
-Aucun framework CSS (Bootstrap/Tailwind) ni JavaScript embarqué.
-
-Typographie : Google Fonts Inter (400/600/700).
-
-Navigation : header unifié commun à toutes les pages (logo/brand stable).
-
-Focus : rendu visuel propre, responsive, cohérent.
-
-Structure du projet
-talentjump/
-├─ index.html # Page d’accueil (Hero, features, CTA)
-├─ candidats.html # Liste des candidats (cartes statiques)
-├─ ajouter.html # Formulaire d’ajout (visuel uniquement)
-├─ css/
-│ └─ style.css # Styles communs + sections par page (commentées)
-└─ assets/ # (optionnel) logos, images, icônes
-
-Démarrage rapide
-
-Cloner le dépôt puis ouvrir le dossier dans VS Code (ou autre IDE).
-
-Lancer un serveur statique (recommandé pour les polices Google) :
-
-VS Code → extension Live Server → clic droit sur index.html → Open with Live Server
-
-ou tout simplement ouvrir index.html dans le navigateur.
-
-Naviguer via le header entre index.html, candidats.html, ajouter.html.
-
-Si les styles “disparaissent”, vérifie le chemin du lien CSS : <link rel="stylesheet" href="css/style.css">.
-
-Design System
-
-Couleurs principales
-
-Primaire: #2563EB (hover: #1E40AF)
-
-Gris (UI): #F8F9FB / #E5E7EB / #333
-
-Statuts :
-
-En attente #3B82F6
-
-Accepté #10B981
-
-Refusé #EF4444
-
-Typo
-
-Inter (400/600/700) via Google Fonts.
-
-Grille & espaces
-
-Conteneur max : 1200px
-
-gap et padding cohérents, cartes avec rayons doux et ombres légères.
-
-Pages & Composants
-
-1. index.html — Accueil
-
-Hero avec gradient, titre, sous-titre, deux CTA (Voir candidats / Ajouter un candidat).
-
-Mockup (placeholder) et section “features” avec cards (icône + titre + texte).
-
-Respect des couleurs/typographies du projet.
-
-2. candidats.html — Liste de candidats
-
-Header unifié (logo stable, nav identique).
-
-Filtres visuels (sans JS) en haut.
-
-Grille responsive de cartes :
-
-En-tête carte : avatar (50×50, cercle), nom, email, poste, badge de statut.
-
-Compétences : tags en span.
-
-Actions : boutons “Modifier statut” et “Supprimer” (visuels uniquement).
-
-États de liens neutralisés (pas de soulignement/bleu au clic).
-
-Snippet — modèle de carte à dupliquer
-
-<article class="candidate-card">
-  <div class="candidate-header">
-    <img src="URL_IMAGE" alt="Nom Prénom" />
-    <div>
-      <h3>Nom Prénom</h3>
-      <p>email@example.com</p>
-      <p>Poste visé</p>
-    </div>
-    <span class="status en-attente">En attente</span>
-    <!-- variantes: .refuse (Refusé) / .accepte (Accepté) -->
-  </div>
-  <div class="skills">
-    <span>Comp 1</span><span>Comp 2</span><span>Comp 3</span>
-  </div>
-  <div class="actions">
-    <button type="button">Modifier statut</button>
-    <button type="button" class="danger">Supprimer</button>
-  </div>
-</article>
-
-3. ajouter.html — Formulaire d’ajout
-
-Formulaire statique (pas d’action ni de JS).
-
-Champs : Nom, Email, Poste, Statut (select), Compétences (textarea), URL photo, Bouton “Ajouter”.
-
-Conteneur centré, ombre légère, rayons, couleurs du design system.
-
-Accessibilité & Responsive
-
-Attributs aria-label sur la nav et le logo (lecture d’écran).
-
-Labels associés aux champs via for/id.
-
-Focus visible personnalisé pour clavier.
-
-Responsive : grille, typographies et paddings fluides (min 320px).
-
-Bonnes pratiques & Maintenance
-
-Header unifié : c’est le même HTML/CSS sur les 3 pages.
-Si le logo “bouge”, vérifier .header**inner { max-width; margin-inline:auto; padding } et les règles .nav**links.
-
-Couleurs : centralisées dans :root (facile à changer).
-
-États liens header : bloc CSS “Verrou Header” neutralise bleu/souligné sur tous les états (:hover, :active, :visited).
-
-Boutons actions candidats : curseur toujours en pointeur via CSS (maquette).
-
-Aucune dépendance JS : le rendu reste identique sans scripts (exigence projet).
-
-Conformité aux consignes
-
-✅ Front-End : HTML5 + CSS3, pas de framework CSS/JS.
-
-✅ Pages demandées : index.html, candidats.html (cartes), ajouter.html (formulaire).
-
-✅ Design sobre, responsive, typographie Inter, couleurs du thème.
-
-✅ Séparation HTML/CSS (un seul style.css).
-
-✅ Pas de logique : filtres/boutons purement visuels (en attendant le back Java).
-
-Crédits
-
-UI / Intégration : Albert (lead), Dorian, José.
-
-Typographie : Inter (Google Fonts).
-
-Avatars maquette : randomuser.me (placeholders).
-
+---
+
+## Structure du projet
+
+```
+PROJET JAVA COMPLET/
+├─ src/                # Back-end (Java)
+│  ├─ Candidat.java            # Classe représentant un candidat
+│  ├─ GestionCandidats.java    # Gestion des opérations sur les candidats
+│  ├─ Main.java                # Point d’entrée du programme
+│  └─ Serveur.java             # Serveur Java pour faire tourner le projet
+│
+└─ web/                # Front-end (HTML/CSS)
+   ├─ css/                      # Styles
+   ├─ index.html                # Page d’accueil
+   ├─ Candidats.html            # Liste des candidats
+   └─ Ajouter.html              # Formulaire d’ajout
+```
+
+---
+
+## Partie Front-end
+
+- **Technologies** : HTML5, CSS (un fichier `css/style.css`).  
+- **Navigation** : en-tête commun entre toutes les pages.  
+- **Pages disponibles** :  
+  - `index.html` → page d’accueil,  
+  - `Candidats.html` → liste des candidats sous forme de cartes,  
+  - `Ajouter.html` → formulaire d’ajout de candidat.  
+
+Le front peut être ouvert directement dans un navigateur ou servi par le serveur Java.
+
+---
+
+## Partie Back-end
+
+- **Langage** : Java  
+- **JDK requis** : version 17 ou supérieure  
+- **Serveur** : classe `Serveur.java` permettant de lancer le projet côté back-end.  
+- **Classes principales** :  
+  - `Candidat.java` : modèle de données pour un candidat,  
+  - `GestionCandidats.java` : logique métier (ajout, suppression, liste…),  
+  - `Main.java` : lance l’application,  
+  - `Serveur.java` : gère le serveur pour relier back-end et front-end.  
+
+---
+
+## Démarrage rapide
+
+### Pré-requis  
+- Installer **JDK 17+**  
+- Vérifier que la variable d’environnement `JAVA` est configurée  
+
+### Lancer le projet  
+1. ouvrir le dossier sur visual studio code
+   ```  
+2. apres avoir installer java et le jdk ce rendre sur le fichier "serveur.java"
+puis lancer le serveur via la function run java  
+   ```  
+3. Le serveur (`Serveur.java`) démarre et rend accessible les pages HTML situées dans le dossier `web/`.  
+4. Ouvrir un navigateur et accéder à :  
+   ```
+   http://localhost:1234
+   ```  
+
+---
+
+## Conformité
+
+✅ Séparation claire **front / back**  
+✅ HTML5 + CSS pour le front-end  
+✅ Java ( gestion serveur) pour le back-end  
+✅ Respect des consignes projet  
+
+---
+
+## Crédits
+
+- Développement : Albert (lead), Dorian, Josué  
+- UI/Front-end : HTML5 + CSS
+- Back-end : Java (serveur)  
